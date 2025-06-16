@@ -16,10 +16,10 @@ public class YoungestAndTallestFriend {
         System.out.print("Enter the height of Anthony :");
         int anthonyHeight = sc.nextInt();
         String youngest;
-        if(amarAge > akbarAge && amarAge >anthonyAge ){
+        if(amarAge < akbarAge && amarAge < anthonyAge ){
             youngest = "Amar";
         }
-        else if(akbarAge > amarAge && akbarAge > anthonyAge){
+        else if(akbarAge < amarAge && akbarAge < anthonyAge){
             youngest = "Akbar";
         }
         else{
