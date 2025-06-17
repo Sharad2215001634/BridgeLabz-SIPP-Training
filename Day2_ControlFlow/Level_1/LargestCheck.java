@@ -1,4 +1,4 @@
-package Day3_Flow_Control.Level_1;
+package Day2_ControlFlow.Level_1;
 import java.util.Scanner;
 public class LargestCheck {
     public static void main(String[] args) {
