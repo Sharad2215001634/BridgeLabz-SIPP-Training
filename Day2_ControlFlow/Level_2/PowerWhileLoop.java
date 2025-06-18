@@ -1,4 +1,4 @@
-package Day2_ControlFlow.Level_1;
+package Day2_ControlFlow.Level_2;
 
 import java.util.Scanner;
 
@@ -20,7 +20,6 @@ public class PowerWhileLoop {
         } else {
             System.out.println("Please enter valid non-negative integers.");
         }
-
         sc.close();
     }
 }
