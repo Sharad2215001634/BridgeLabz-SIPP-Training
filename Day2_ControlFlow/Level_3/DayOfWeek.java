@@ -1,8 +1,6 @@
 package Day2_ControlFlow.Level_3;
-
 public class DayOfWeek {
     public static void main(String[] args) {
-        // Ensure there are exactly 3 arguments
         if (args.length != 3) {
             System.out.println("Usage: java DayOfWeek <month> <day> <year>");
             return;
