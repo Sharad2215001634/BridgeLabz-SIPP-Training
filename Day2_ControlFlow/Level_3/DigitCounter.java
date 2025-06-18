@@ -11,7 +11,6 @@ public class DigitCounter {
         number = Math.abs(number);
         if (number == 0) {
             System.out.println("Number of digits: 1");
-            return;
         }
         int count = 0;
         while (number != 0) {
@@ -19,7 +18,6 @@ public class DigitCounter {
             count++;               
         }
         System.out.println("Number of digits: " + count);
-        
-        
+        sc.close();
     }
 }
