@@ -1,6 +1,6 @@
 package Day3_Array;
 import java.util.*;
-public class EmployeeBonusCalculator {
+public class EmployeeBonusCalculator{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double[] salary = new double[10];
@@ -39,7 +39,7 @@ public class EmployeeBonusCalculator {
             totalOldSalary = totalOldSalary + salary[i];
             totalNewSalary = totalNewSalary + newSalary[i];
         }
-        System.out.println("\nEmployee Details:");
+        System.out.println("Employee Details:");
         for (int i = 0; i < 10; i++) {
             System.out.println("Employee " + (i + 1) + ":");
             System.out.println("Old Salary: " + salary[i]);
