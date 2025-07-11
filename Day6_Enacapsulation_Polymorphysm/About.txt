@@ -1,0 +1,5 @@
+In this Folder Implemented all 
+1 - Encalpsulation
+2 - Polymorphysm
+3 - Abstraction
+4 - Interface
