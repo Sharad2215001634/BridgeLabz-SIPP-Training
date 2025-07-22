@@ -8,6 +8,7 @@ public class StudentScoreManger {
         int n = sc.nextInt();
         if (n < 0) {
             System.out.println("Number of students must be greater than 0.");
+            sc.close();
             return;
         }
         double[] scores = new double[n];
