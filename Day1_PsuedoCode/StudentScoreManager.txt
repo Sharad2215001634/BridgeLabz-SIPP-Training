@@ -1,0 +1,43 @@
+Start
+
+Class StudentScoreManager:
+
+Attribute scores
+
+Constructor(){
+this.scores = new HashMap<String, Integer>();
+}
+
+Method addStudent(name, score):
+scores.put(name, score)
+Print "Added: " + name + " - " + score
+
+
+
+Method findHighestScorer():
+If scores.isEmpty() Then
+Print "No students found"
+Return
+End If
+
+text
+
+Entry<String, Integer> highest = scores.entrySet().stream().max(Entry.comparingByValue()).get()
+
+Print "Highest: " + highest.getKey() + " with " + highest.getValue()
+Method getAverageScore():
+Double avg = scores.values().stream().mapToInt(Integer::intValue).average().orElse(0.0)
+
+text
+Print "Average: " + avg
+Return avg
+End Class
+
+
+text
+
+manager = new StudentScoreManager()
+
+manager.addStudent("hello", 95)
+manager.addStudent("Kyu",90)
+manager.findHighestScorer()
