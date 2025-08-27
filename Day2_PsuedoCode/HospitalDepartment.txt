@@ -1,0 +1,34 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+
+Start
+
+Class Doctor:
+    Attribute name
+    Attribute specialization
+
+    Constructor(name, specialization):
+        this.name = name
+        this.specialization = specialization
+
+Class Hospital:
+    Attribute departmentMap
+
+    Constructor():
+        departmentMap = new Map<String, List<Doctor>>()
+
+    Method addDoctor(department, doctor):
+        If department not in departmentMap Then
+            departmentMap[department] = new List<Doctor>()
+        departmentMap[department].add(doctor)
+
+    Method filterDoctorsBySpecialization(specialization):
+        result = new List<Doctor>()
+        For each department in departmentMap:
+            For each doctor in departmentMap[department]:
+                If doctor.specialization == specialization Then
+                    result.add(doctor)
+        Return result
+
+-------------------------------------------------------------------------------------------------
+						                End
