@@ -1,0 +1,31 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+
+Start
+
+Class Job:
+    Attribute jobId
+    Attribute deadline
+    Attribute processingTime
+
+    Constructor(jobId, deadline, processingTime):
+        this.jobId = jobId
+        this.deadline = deadline
+        this.processingTime = processingTime
+
+Class JobScheduler:
+    Attribute priorityQueue
+
+    Constructor():
+        priorityQueue = new PriorityQueue (based on earliest deadline and shortest processingTime)
+
+    Method addJob(job):
+        priorityQueue.insert(job)
+
+    Method processJobs():
+        While priorityQueue not empty:
+            job = priorityQueue.remove()
+            Print "Processing job: " + job.jobId
+
+-------------------------------------------------------------------------------------------------
+						                End
