@@ -1,0 +1,46 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+Start
+
+Class Node:
+    Attribute stopName
+    Attribute next
+
+    Constructor(stopName):
+        this.stopName = stopName
+        this.next = null
+
+Class LinkedList:
+    Attribute head
+
+    Constructor():
+        this.head = null
+
+    Method insertStop(afterStop, newStop):
+        Traverse list until stopName == afterStop
+        Create Node(newStop)
+        Link new node after that stop
+
+    Method removeStop(stopName):
+        Traverse list
+        If stopName found
+            Unlink it from list
+
+    Method searchStop(stopName):
+        Traverse list
+        If stopName found → Print "Stop found"
+        Else → Print "Stop not found"
+
+    Method displayRoute():
+        Print all stopNames in order
+
+Main Program:
+    Create LinkedList route
+    Add stops: Depot → Main Street → City Mall → Hospital → Airport
+    route.insertStop("City Mall", "University")
+    route.removeStop("Hospital")
+    route.searchStop("Airport")
+    route.displayRoute()
+
+-------------------------------------------------------------------------------------------------
+						                End
