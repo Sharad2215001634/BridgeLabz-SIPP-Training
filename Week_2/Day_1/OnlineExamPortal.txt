@@ -1,0 +1,65 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+
+Start
+
+Class User:
+    Attribute username
+    Attribute password
+
+    Constructor(username, password):
+        this.username = username
+        this.password = password
+
+    Method login():
+        Print "Generic user login..."
+        Return true
+
+
+Class Student extends User:
+    Attribute isEnrolled
+
+    Constructor(username, password, isEnrolled):
+        Call super(username, password)
+        this.isEnrolled = isEnrolled
+
+    Override Method login():
+        If username is not null AND password is not null AND isEnrolled == true Then
+            Print "Student " + username + " logged in. Exams available."
+            Return true
+        Else
+            Print "Student login failed! Enrollment required."
+            Return false
+
+
+Class Admin extends User:
+    Attribute hasAdminPrivileges
+
+    Constructor(username, password, hasAdminPrivileges):
+        Call super(username, password)
+        this.hasAdminPrivileges = hasAdminPrivileges
+
+    Override Method login():
+        If username is not null AND password is not null AND hasAdminPrivileges == true Then
+            Print "Admin " + username + " logged in. Access to exam management granted."
+            Return true
+        Else
+            Print "Admin login failed! Insufficient privileges."
+            Return false
+
+
+Main Program:
+    Create Student user1 = new Student("john123", "pass123", true)
+    Call user1.login()
+
+    Create Student user2 = new Student("amy456", "pass456", false)
+    Call user2.login()
+
+    Create Admin admin1 = new Admin("admin001", "adminpass", true)
+    Call admin1.login()
+
+    Create Admin admin2 = new Admin("staff002", "staffpass", false)
+    Call admin2.login()
+
+-------------------------------------------------------------------------------------------------
+						                End
