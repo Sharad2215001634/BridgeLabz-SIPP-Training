@@ -1,0 +1,50 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+
+Start
+
+Class Employee:
+    Attribute name
+    Attribute department
+    Attribute rating  
+    Attribute baseSalary
+
+    Constructor(name, department, rating, baseSalary):
+        this.name = name
+        this.department = department
+        this.rating = rating
+        this.baseSalary = baseSalary
+
+Class BonusEngine:
+    Method distributeBonuses(employeeList: List<Employee>):
+        deptGroups = employeeList.stream()
+                                 .collect(groupBy(emp -> emp.department))
+
+        For each dept in deptGroups:
+            emps = deptGroups[dept]
+
+            totalSalary = emps.stream()
+                              .map(e -> e.baseSalary)
+                              .sum()
+
+            pool = totalSalary * 0.10 
+
+            totalRating = emps.stream()
+                              .map(e -> e.rating)
+                              .sum()
+
+            For each e in emps:
+                share = (e.rating / totalRating) * pool
+                Print "Dept: " + dept + ", Emp: " + e.name + ", Bonus: " + share
+
+Function demoBonus():
+    emps = new List<Employee>()
+    emps.add(new Employee("Emp-A","IT",5,600000))
+    emps.add(new Employee("Emp-B","IT",3,300000))
+    emps.add(new Employee("Emp-C","IT",2,100000))
+    emps.add(new Employee("Emp-D","Finance",4,500000))
+    engine = new BonusEngine()
+    engine.distributeBonuses(emps)
+
+-------------------------------------------------------------------------------------------------
+						                End
