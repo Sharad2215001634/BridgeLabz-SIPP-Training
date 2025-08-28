@@ -1,0 +1,69 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+
+Start
+
+Class User:
+    Attribute username
+    Attribute password
+
+    Constructor(username, password):
+        this.username = username
+        this.password = password
+
+    Method login():
+        Print "Generic user login..."
+        Return true
+
+
+Class Student extends User:
+    Attribute isRegistered
+    Attribute isEnrolled
+
+    Constructor(username, password, isRegistered, isEnrolled):
+        Call super(username, password)
+        this.isRegistered = isRegistered
+        this.isEnrolled = isEnrolled
+
+    Override Method login():
+        If isRegistered == true AND isEnrolled == true Then
+            Print "Student " + username + " logged in successfully."
+            Print "Available exams displayed."
+            Return true
+        Else
+            Print "Student login failed. Registration/Enrollment issue."
+            Return false
+
+
+Class Admin extends User:
+    Attribute hasAdminPrivileges
+
+    Constructor(username, password, hasAdminPrivileges):
+        Call super(username, password)
+        this.hasAdminPrivileges = hasAdminPrivileges
+
+    Override Method login():
+        If hasAdminPrivileges == true Then
+            Print "Admin " + username + " logged in successfully."
+            Print "Exam management tools displayed."
+            Return true
+        Else
+            Print "Admin login failed. Privileges missing."
+            Return false
+
+
+Main Program:
+    Create Student s1 = new Student("john123", "pass123", true, true)
+    Call s1.login()
+
+    Create Student s2 = new Student("amy456", "pass456", true, false)
+    Call s2.login()
+
+    Create Admin a1 = new Admin("admin001", "adminpass", true)
+    Call a1.login()
+
+    Create Admin a2 = new Admin("staff002", "staffpass", false)
+    Call a2.login()
+
+-------------------------------------------------------------------------------------------------
+						                End
