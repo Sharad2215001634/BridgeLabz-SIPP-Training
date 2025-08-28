@@ -1,0 +1,30 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+
+Start
+
+Class Item:
+    Attribute name
+    Attribute price
+
+    Constructor(name, price):
+        this.name = name
+        this.price = price
+
+Class Cart:
+    Attribute itemList
+
+    Constructor():
+        itemList = new List<Item>()
+
+    Method addItem(item):
+        itemList.add(item)
+
+    Generic Method calculateTotalPrice():
+        total = 0
+        For each item in itemList:
+            total = total + item.price
+        Return total
+
+-------------------------------------------------------------------------------------------------
+						                End
