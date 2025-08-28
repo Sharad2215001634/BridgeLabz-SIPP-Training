@@ -1,0 +1,23 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+Start
+
+Class WordCounter:
+    Method countWords(paragraph):
+        Convert paragraph to lowercase
+        Remove punctuation
+        Split by spaces into words
+        For each word:
+            If word in map
+                map[word]++
+            Else
+                map[word] = 1
+        Sort map by frequency
+        Print word and count
+
+Main Program:
+    paragraph = "The news today is about the rise in technology trends."
+    Call WordCounter.countWords(paragraph)
+
+-------------------------------------------------------------------------------------------------
+						                End
