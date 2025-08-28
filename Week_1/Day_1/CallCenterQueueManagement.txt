@@ -1,0 +1,48 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+
+Start
+
+Class Customer:
+    Attribute name
+    Attribute type   // "Normal" or "Emergency"
+
+    Constructor(name, type):
+        this.name = name
+        this.type = type
+
+Class CallCenterQueue:
+    Attribute emergencyQueue
+    Attribute normalQueue
+
+    Constructor():
+        emergencyQueue = new Queue<Customer>()
+        normalQueue = new Queue<Customer>()
+
+    Method enqueueCustomer(customer):
+        If customer.type == "Emergency" Then
+            emergencyQueue.enqueue(customer)
+        Else
+            normalQueue.enqueue(customer)
+    Method dequeueCustomer():
+        If emergencyQueue is not empty Then
+            Return emergencyQueue.dequeue()
+        Else If normalQueue is not empty Then
+            Return normalQueue.dequeue()
+        Else
+            Print "No customers in queue"
+            Return null
+
+    Method displayQueues():
+        Print "Emergency Queue:"
+        For each customer in emergencyQueue:
+            Print customer.name
+
+        Print "Normal Queue:"
+        For each customer in normalQueue:
+            Print customer.name
+
+
+
+-------------------------------------------------------------------------------------------------
+						                End
