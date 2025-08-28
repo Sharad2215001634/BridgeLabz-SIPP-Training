@@ -1,0 +1,63 @@
+Question 2 - Library Membership Tracker
+○ Create a class Member with attributes like name, ID, membership date. Add methods to check membership validity.
+
+
+						
+						                Solution
+-------------------------------------------------------------------------------------------------
+
+
+Start
+
+Class Member:
+Attribute name
+Attribute memberId
+Attribute membershipDate
+Attribute membershipType
+
+
+Constructor(name, memberId, membershipDate, membershipType ):
+this.name = name
+this.memberId = memberId
+this.membershipDate = membershipDate
+this.membershipType = membershipType
+
+
+Method getName():
+Return this.name
+
+Method getMemberId():
+Retrun this.memberId
+
+Method getmembershipDate():
+Return this.membershipDate
+
+Method getMembershipType():
+Return this.membershipType
+
+Method checkMembershipValidity():
+currentDate = getCurrentDate()
+
+
+
+
+If membershipType == "Annual" Then
+    expiryDate = membershipDate + 365 days
+Else If membershipType == "Monthly" Then  
+    expiryDate = membershipDate + 30 days
+Else If membershipType == "Lifetime" Then
+    Return true
+End If
+
+If currentDate <= expiryDate Then
+    Return true
+Else
+    Return false
+End If
+
+
+
+-------------------------------------------------------------------------------------------------
+						                End
+
+

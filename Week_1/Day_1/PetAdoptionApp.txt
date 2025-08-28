@@ -1,0 +1,42 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+
+Start
+
+Class Pet:
+    Attribute name
+    Attribute age
+
+    Constructor(name, age):
+        this.name = name
+        this.age = age
+
+    Method getDetails():
+        Return "Name: " + name + ", Age: " + age
+
+Class Dog extends Pet:
+    Attribute breed
+
+    Constructor(name, age, breed):
+        super(name, age)
+        this.breed = breed
+
+    Method getDetails():
+        Return super.getDetails() + ", Breed: " + breed
+
+Class Cat extends Pet:
+    Attribute color
+
+    Constructor(name, age, color):
+        super(name, age)
+        this.color = color
+
+    Method getDetails():
+        Return super.getDetails() + ", Color: " + color
+
+Class Bird extends Pet:
+    Attribute canFly
+
+    Constructor(name, age, canFly):
+        super(name, age)
+        this.canFly = canFly

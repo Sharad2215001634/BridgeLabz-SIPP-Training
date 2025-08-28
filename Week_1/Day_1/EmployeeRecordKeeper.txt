@@ -1,0 +1,58 @@
+Employee Record Keeper
+○ Use ArrayList<Employee> and filter employees by department using
+streams.
+
+Class Employee:
+
+Attribute name
+Attribute department
+
+Constructor(name, department){
+this.name = name;
+this.department = department;
+}
+
+Method getName():
+Return this.name
+
+Method getDepartment():
+Return this.department
+
+Method toString():
+Return name + " - " + department
+
+End Class
+
+
+Class EmployeeRecordKeeper:
+
+Attribute employees
+
+Constructor():
+    this.employees = new ArrayList<Employee>()
+
+Method addEmployee(name, department):
+employee = new Employee(name, department)
+employees.add(employee)
+Print "Added: " + name + " - " + department
+
+Method displayAll():
+For each employee in employees:
+Print employee.toString()
+End For
+
+Method filterByDepartment(dept):
+Print "Employees in " + dept + ":"
+
+
+End Class
+
+keep = new EmployeeRecordKeeper()
+
+
+keep.addEmployee("Sharad", "IT")
+keep.addEmployee("hello", "HR")
+
+keep.displayAll()
+keep.filterByDepartment("IT")    
+keep.filterByDepartment("HR")   
