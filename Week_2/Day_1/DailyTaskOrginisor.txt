@@ -1,0 +1,34 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+Start
+
+Class TaskOrganizer:
+    Attribute tasks (LinkedHashMap<Integer, String>)
+    Attribute taskId = 0
+
+    Method addTask(description):
+        taskId++
+        tasks.put(taskId, description)
+        Print "Task added: " + description
+
+    Method removeTask(taskId):
+        If taskId exists
+            tasks.remove(taskId)
+            Print "Task removed"
+        Else
+            Print "Task not found"
+
+    Method viewTasks():
+        For each entry in tasks
+            Print taskId + " → " + description
+
+Main Program:
+    Create TaskOrganizer t
+    t.addTask("Check emails")
+    t.addTask("Prepare sales report")
+    t.addTask("Call client")
+    t.removeTask(2)
+    t.viewTasks()
+
+-------------------------------------------------------------------------------------------------
+						                End
