@@ -1,0 +1,33 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+Start
+
+Class AttendanceSystem:
+    Attribute attendance[students][days]
+
+    Constructor(numStudents, numDays):
+        Initialize 2D array attendance with 'A'
+
+    Method markAttendance(student, day, status):
+        attendance[student][day] = status
+
+    Method updateAttendance(student, day, newStatus):
+        attendance[student][day] = newStatus
+
+    Method generateReport(student):
+        countP = 0
+        For each day in attendance[student]:
+            If attendance[student][day] == 'P'
+                countP++
+        Print "Student " + student + " present days: " + countP
+
+Main Program:
+    Create AttendanceSystem with 3 students, 30 days
+    Mark Student1 Day1 = 'P'
+    Mark Student1 Day2 = 'P'
+    Mark Student1 Day3 = 'A'
+    Update Student1 Day3 = 'P'
+    Generate report for Student1
+
+-------------------------------------------------------------------------------------------------
+						                End
