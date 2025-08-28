@@ -1,0 +1,82 @@
+						                Solution
+-------------------------------------------------------------------------------------------------
+Start
+
+Class Ticket:
+    Attribute movieName
+    Attribute seatNumber
+    Attribute price
+    Attribute isBooked
+
+    Constructor(movieName, seatNumber, price):
+        this.movieName = movieName
+        this.seatNumber = seatNumber
+        this.price = price
+        this.isBooked = false
+
+    Method bookTicket():
+        this.isBooked = true
+        Print "Ticket booked: " + movieName + " Seat: " + seatNumber
+
+    Method cancelTicket():
+        this.isBooked = false
+        Print "Ticket cancelled for seat: " + seatNumber
+
+
+Class Theatre:
+    Attribute movieSchedule (List of movies with timings)
+    Attribute availableSeats (List of seat numbers)
+    Attribute tickets (List of Ticket objects)
+
+    Constructor():
+        Initialize movieSchedule
+        Initialize availableSeats
+        Initialize tickets
+
+    Method issueTicket(movieName, seatNumber, price):
+        If seatNumber in availableSeats Then
+            Create Ticket t = new Ticket(movieName, seatNumber, price)
+            Call t.bookTicket()
+            Add t to tickets
+            Remove seatNumber from availableSeats
+            Return t
+        Else
+            Print "Seat not available."
+            Return null
+
+    Method cancelTicket(ticket):
+        If ticket in tickets AND ticket.isBooked == true Then
+            Call ticket.cancelTicket()
+            Add ticket.seatNumber back to availableSeats
+        Else
+            Print "Invalid ticket cancellation."
+
+
+Class Customer:
+    Attribute name
+
+    Constructor(name):
+        this.name = name
+
+    Method bookMovie(theatre, movieName, seatNumber, price):
+        Print name + " is booking..."
+        ticket = theatre.issueTicket(movieName, seatNumber, price)
+        Return ticket
+
+    Method cancelBooking(theatre, ticket):
+        Print name + " requests cancellation..."
+        theatre.cancelTicket(ticket)
+
+
+Main Program:
+    Create Theatre t1
+    Add "Avengers: Endgame - 6PM" to t1.movieSchedule
+    Add seats ["A10", "A11", "A12"] to t1.availableSeats
+
+    Create Customer c1 = new Customer("Ravi")
+    ticket1 = c1.bookMovie(t1, "Avengers: Endgame - 6PM", "A12", 250)
+
+    c1.cancelBooking(t1, ticket1)
+
+-------------------------------------------------------------------------------------------------
+						                End
