@@ -1,0 +1,50 @@
+CLASS Pet
+    ATTRIBUTES:
+        name : String
+        species : String
+        lastVaccinationDate : Date
+
+    METHOD constructor(name, species, lastVaccinationDate)
+        this.name = name
+        this.species = species
+        this.lastVaccinationDate = lastVaccinationDate
+
+    METHOD checkVaccinationStatus(currentDate : Date) RETURNS String
+        monthsDifference = monthsBetween(lastVaccinationDate, currentDate)
+
+        IF monthsDifference > 12
+            RETURN "Vaccination OVERDUE! Please vaccinate immediately."
+        ELSE IF monthsDifference == 11
+            RETURN "Vaccination due in 1 month. Reminder set."
+        ELSE
+            RETURN "Vaccination up-to-date."
+
+
+CLASS ClinicManager
+    ATTRIBUTES:
+        pets : List of Pet
+
+    METHOD constructor()
+        pets = empty list
+
+    METHOD registerPet(pet : Pet, currentDate : Date)
+        PRINT "Registering Pet: " + pet.name + " (" + pet.species + 
+              ") | Last Vaccination: " + pet.lastVaccinationDate
+        ADD pet to pets
+        status = pet.checkVaccinationStatus(currentDate)
+        PRINT "Status: " + status
+
+
+MAIN PROGRAM
+    currentDate = TODAY()
+
+    clinic = new ClinicManager()
+    pet1 = new Pet("Bruno", "Dog", DATE(2024, 10, 12))
+    clinic.registerPet(pet1, currentDate)
+
+    pet2 = new Pet("Mittens", "Cat", DATE(2023, 06, 15))
+    clinic.registerPet(pet2, currentDate)
+
+    
+    pet3 = new Pet("Snowy", "Rabbit", DATE(2024, 09, 10))
+    clinic.registerPet(pet3, currentDate)
