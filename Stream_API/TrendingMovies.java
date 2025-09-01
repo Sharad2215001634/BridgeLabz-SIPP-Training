@@ -3,9 +3,9 @@ import java.util.Comparator;
 import java.util.List;
 
 class Movie {
-    private String title;
-    private double rating;
-    private int year;
+    private final String  title;
+    private final double rating;
+    private final int year;
 
     public Movie(String title, double rating, int year) {
         this.title = title;
